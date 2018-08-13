@@ -1,0 +1,12 @@
+# login hadoop{host_num}.hadoop
+spawn scp /root/.ssh/id_rsa.pub root@{host_name}:/root/.ssh/tmp.pub
+expect {
+  "*(yes/no)?" { send "yes\r";exp_continue }
+  "*password:" { send "{host_pass}\r" }
+}
+spawn ssh root@{host_name} "cat .ssh/tmp.pub >> .ssh/authorized_keys"
+expect {
+	"*(yes/no)?" { send "yes\r";exp_continue }
+	"*password:" { send "{host_pass}\r" }
+}
+
