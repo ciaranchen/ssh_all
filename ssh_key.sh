@@ -1,6 +1,5 @@
-# ssh for all host
-# run it on hadoop1.hadoop with ssh_expect in its home path
-
+# /bin/bash
+# run it on a host that you can input password
 
 for i in {1..16}; do 
 	echo "now dealing: hadoop${i}.hadoop"

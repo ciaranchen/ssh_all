@@ -2,7 +2,7 @@
 
 from sshkey_mapping import pass_mapping
 
-with open("ssh_key.expect.base") as fp:
+with open("ssh_key.expect.template") as fp:
 	content = fp.read()
 	
 with open("ssh_key.expect", 'w') as fw:
